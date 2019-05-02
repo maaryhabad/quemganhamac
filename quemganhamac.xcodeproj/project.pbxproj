@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CDF5CB76227B0FF400DEF2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CB75227B0FF400DEF2E0 /* AppDelegate.swift */; };
-		CDF5CB78227B0FF400DEF2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CB77227B0FF400DEF2E0 /* ViewController.swift */; };
+		CDF5CB78227B0FF400DEF2E0 /* PessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CB77227B0FF400DEF2E0 /* PessoaViewController.swift */; };
 		CDF5CB7B227B0FF400DEF2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF5CB79227B0FF400DEF2E0 /* Main.storyboard */; };
 		CDF5CB7D227B0FF500DEF2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF5CB7C227B0FF500DEF2E0 /* Assets.xcassets */; };
 		CDF5CB80227B0FF500DEF2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF5CB7E227B0FF500DEF2E0 /* LaunchScreen.storyboard */; };
 		CDF5CB8B227B0FF500DEF2E0 /* quemganhamacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CB8A227B0FF500DEF2E0 /* quemganhamacTests.swift */; };
 		CDF5CB96227B0FF500DEF2E0 /* quemganhamacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CB95227B0FF500DEF2E0 /* quemganhamacUITests.swift */; };
+		CDF5CBA4227B119100DEF2E0 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5CBA3227B119100DEF2E0 /* Pessoa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		CDF5CB72227B0FF400DEF2E0 /* quemganhamac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quemganhamac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF5CB75227B0FF400DEF2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDF5CB77227B0FF400DEF2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDF5CB77227B0FF400DEF2E0 /* PessoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PessoaViewController.swift; sourceTree = "<group>"; };
 		CDF5CB7A227B0FF400DEF2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDF5CB7C227B0FF500DEF2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF5CB7F227B0FF500DEF2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		CDF5CB91227B0FF500DEF2E0 /* quemganhamacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quemganhamacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF5CB95227B0FF500DEF2E0 /* quemganhamacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quemganhamacUITests.swift; sourceTree = "<group>"; };
 		CDF5CB97227B0FF500DEF2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF5CBA3227B119100DEF2E0 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				CDF5CB75227B0FF400DEF2E0 /* AppDelegate.swift */,
-				CDF5CB77227B0FF400DEF2E0 /* ViewController.swift */,
+				CDF5CB77227B0FF400DEF2E0 /* PessoaViewController.swift */,
 				CDF5CB79227B0FF400DEF2E0 /* Main.storyboard */,
 				CDF5CB7C227B0FF500DEF2E0 /* Assets.xcassets */,
 				CDF5CB7E227B0FF500DEF2E0 /* LaunchScreen.storyboard */,
 				CDF5CB81227B0FF500DEF2E0 /* Info.plist */,
+				CDF5CBA3227B119100DEF2E0 /* Pessoa.swift */,
 			);
 			path = quemganhamac;
 			sourceTree = "<group>";
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF5CB78227B0FF400DEF2E0 /* ViewController.swift in Sources */,
+				CDF5CB78227B0FF400DEF2E0 /* PessoaViewController.swift in Sources */,
+				CDF5CBA4227B119100DEF2E0 /* Pessoa.swift in Sources */,
 				CDF5CB76227B0FF400DEF2E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
