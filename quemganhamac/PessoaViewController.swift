@@ -14,62 +14,52 @@ class PessoaViewController: UIViewController {
     @IBOutlet weak var imgPessoa: UIImageView!
     @IBOutlet weak var nomePessoa: UILabel!
     @IBOutlet weak var txtPessoa: UILabel!
+    @IBOutlet weak var cmtEditor: UILabel!
+    @IBOutlet weak var tituloComentario: UILabel!
     
-//    @IBAction func gesture(_ sender: Any) {
-//        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swiped:"))
-//
-//        if swipeRecognizer.direction == .right {
-//            print("direita")
-//            proximaPessoa()
-//
-//        } else if swipeRecognizer.direction == .left {
-//            print("esquerda")
-//            proximaPessoa()
-//
-//        } else if swipeRecognizer.direction == .up {
-//            print("cima")
-//            proximaPessoa()
-//
-//        } else if swipeRecognizer.direction == .down {
-//            print("baixo")
-//            proximaPessoa()
-//
-//        }
-//    }
-//
+    var pessoaSelecionada = 0
+    
+    @IBOutlet weak var retorno: UILabel!
+    
     @IBAction func gesture(_ sender: Any) {
         print("direita")
-        proximaPessoa()
+        retorno.alpha = 1
+        retorno.text = "Entrega normal"
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            print("done")
+            self.proximaPessoa()
+        })
     }
+    
     override func viewDidLoad() {
         proximaPessoa()
     }
   
     
     func proximaPessoa() {
-        let pessoaSelecionada = Int.random(in: 0...49)
+        retorno.alpha = 0
         atualizarInterface(pessoaSelecionada: pessoaSelecionada)
+        pessoaSelecionada += 1
     }
-    
 
     
     let pessoas = [
         
         // as descrições foram feitas pelas próprias pessoas.
         Pessoa(nome: "Ailtinho", idade: 20, descricao: "solteiro, lindo, unteligente.", imagem: UIImage(named: "01")!, comentario: "não vai chegar os mac."),
-        Pessoa(nome: "Ana Paula Clemente", idade: 30, descricao: "blablabla", imagem: UIImage(named: "02")!, comentario: ""),
+        Pessoa(nome: "Ana Paula Clemente", idade: 27, descricao: "felizmente não sou uma rockstar", imagem: UIImage(named: "02")!, comentario: "se não morreria cedo."),
         Pessoa(nome: "André Luiz Tosin", idade: 30, descricao: "blablabla", imagem: UIImage(named: "03")!, comentario: ""),
-        Pessoa(nome: "Andy Valengo", idade: 30, descricao: "blablabla", imagem: UIImage(named: "04")!, comentario: ""),
+        Pessoa(nome: "Andy Valengo", idade: 30, descricao: "BIIIIIIIIIIRL 💪", imagem: UIImage(named: "04")!, comentario: ""),
         Pessoa(nome: "Bruno Pastre", idade: 30, descricao: "blablabla", imagem: UIImage(named: "05")!, comentario: ""),
         Pessoa(nome: "Carlos Modinez", idade: 30, descricao: "blablabla", imagem: UIImage(named: "06")!, comentario: ""),
-        Pessoa(nome: "Kali Tokarski", idade: 30, descricao: "Promiscous Girl 🎶", imagem: UIImage(named: "07")!, comentario: "que mulher"),
+        Pessoa(nome: "Kali Tokarski", idade: 22, descricao: "Promiscous Girl 🎶🐍", imagem: UIImage(named: "07")!, comentario: "que mulher"),
         Pessoa(nome: "Cris Correia", idade: 30, descricao: "blablabla", imagem: UIImage(named: "08")!, comentario: ""),
         Pessoa(nome: "Duda Linhares", idade: 18, descricao: "rainha das galáxias", imagem: UIImage(named: "09")!, comentario: "vai representar nóis na WWDC"),
         Pessoa(nome: "Enzo Maruffa", idade: 19, descricao: "roxo 💜", imagem: UIImage(named: "10")!, comentario: "programador ele"),
         Pessoa(nome: "Felipe Mesquita", idade: 30, descricao: "blablabla", imagem: UIImage(named: "11")!, comentario: ""),
         Pessoa(nome: "Kaz Born", idade: 30, descricao: "blablabla", imagem: UIImage(named: "12")!, comentario: ""),
         Pessoa(nome: "Filipe de Oliveira", idade: 30, descricao: "blablabla", imagem: UIImage(named: "13")!, comentario: ""),
-        Pessoa(nome: "Akira Tsukamoto", idade: 20, descricao: "Japão. 🇯🇵\n\nComentário do editor: China in box", imagem: UIImage(named: "14")!, comentario: "China in box 🇨🇳"),
+        Pessoa(nome: "Akira Tsukamoto", idade: 20, descricao: "Japão. 🇯🇵", imagem: UIImage(named: "14")!, comentario: "China in box 🇨🇳"),
         Pessoa(nome: "Gabriel Taques", idade: 30, descricao: "blablabla", imagem: UIImage(named: "15")!, comentario: ""),
         Pessoa(nome: "Gabriel Gazal", idade: 30, descricao: "blablabla", imagem: UIImage(named: "16")!, comentario: ""),
         Pessoa(nome: "Gabs Nogueira", idade: 20, descricao: "Meu coração é o sol 🦁", imagem: UIImage(named: "17")!, comentario: "ela costura ela"),
@@ -78,8 +68,8 @@ class PessoaViewController: UIViewController {
         Pessoa(nome: "Jéssica Lopes", idade: 30, descricao: "blablabla", imagem: UIImage(named: "20")!, comentario: ""),
         Pessoa(nome: "Yumi Tanimoto", idade: 21, descricao: "𝓠𝓾𝓮𝓶 𝓼𝓮 𝓭𝓮𝓯𝓲𝓷𝓮 𝓼𝓮 𝓵𝓲𝓶𝓲𝓽𝓪 🤪🤙", imagem: UIImage(named: "21")!, comentario: "ela dá chocolatinho na páscoa <3"),
         Pessoa(nome: "Conrado Santana", idade: 30, descricao: "blablabla", imagem: UIImage(named: "22")!, comentario: ""),
-        Pessoa(nome: "Raffs", idade: 30, descricao: "blablabla", imagem: UIImage(named: "23")!, comentario: ""),
-        Pessoa(nome: "João Barion", idade: 30, descricao: "blablabla", imagem: UIImage(named: "24")!, comentario: ""),
+        Pessoa(nome: "Raffs", idade: 19, descricao: "VJ da MTV", imagem: UIImage(named: "23")!, comentario: "#gintônica"),
+        Pessoa(nome: "João Barion", idade: 47, descricao: "tenho uma tatuagem do buzz lightyear no braço", imagem: UIImage(named: "24")!, comentario: "que loucura!"),
         Pessoa(nome: "José Bestel", idade: 30, descricao: "blablabla", imagem: UIImage(named: "25")!, comentario: ""),
         Pessoa(nome: "Kelvin Soares", idade: 30, descricao: "blablabla", imagem: UIImage(named: "26")!, comentario: ""),
         Pessoa(nome: "Kevin Katzer", idade: 24, descricao: "blablabla", imagem: UIImage(named: "27")!, comentario: "curte uma carona"),
@@ -109,11 +99,22 @@ class PessoaViewController: UIViewController {
     ]
     
     func atualizarInterface(pessoaSelecionada: Int) {
-        let pessoa = pessoas[pessoaSelecionada]
-        print(pessoa.nome)
-        imgPessoa.image = pessoa.imagem
+        
+        let pessoa = pessoas[pessoaSelecionada] // crio uma variável pra não precisar ficar repetindo esse trecho de código que quer dizer: meuArray[número da posição que eu to lendo]
+        print(pessoa.nome) //aqui um print só pra saber se tá funcionando
+        
+        imgPessoa.image = pessoa.imagem // troco a imagem pela imagem do meuyArray[número da posição que eu to lendo]
         nomePessoa.text = "\(pessoa.nome), \(pessoa.idade)"
         txtPessoa.text = pessoa.descricao
+        cmtEditor.text = pessoa.comentario
+        
+        if pessoa.comentario == "" {
+            tituloComentario.alpha = 0
+            cmtEditor.alpha = 0
+        } else {
+            tituloComentario.alpha = 1
+            cmtEditor.alpha = 1
+        }
        
     }
 
