@@ -16,23 +16,92 @@ class PessoaViewController: UIViewController {
     @IBOutlet weak var txtPessoa: UILabel!
     @IBOutlet weak var cmtEditor: UILabel!
     @IBOutlet weak var tituloComentario: UILabel!
+
     
     var pessoaSelecionada = 0
     
     @IBOutlet weak var retorno: UILabel!
     
-    @IBAction func gesture(_ sender: Any) {
-        print("direita")
+    
+    @IBAction func entregaRapida(_ sender: Any) {
+        Rapida()
+    }
+    
+    @IBAction func entregaNormal(_ sender: Any) {
+        Normal()
+    }
+    
+    @IBAction func naoGanha(_ sender: Any) {
+        nGanha()
+    }
+    
+    @IBAction func naoMerece(_ sender: Any) {
+        nMerece()
+    }
+    
+    @IBAction func gestureRight(_ sender: Any) {
+        Normal()
+    }
+    
+    @IBAction func gestureLeft(_ sender: Any) {
+        nGanha()
+    }
+    
+    @IBAction func gestureUp(_ sender: Any) {
+        Rapida()
+    }
+    
+    @IBAction func gestureDown(_ sender: Any) {
+        nMerece()
+    }
+    
+    func Normal() {
         retorno.alpha = 1
         retorno.text = "Entrega normal"
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        print("Entrega normal")
+        retorno.textColor = UIColor.blue
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             print("done")
+            self.proximaPessoa()
+        })
+    }
+    
+    func Rapida() {
+        retorno.alpha = 1
+        retorno.text = "Entrega rápida"
+        print("Entrega rápida")
+        retorno.textColor = UIColor.blue
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            print("done")
+            self.proximaPessoa()
+        })
+    }
+    
+    func nGanha() {
+        retorno.alpha = 1
+        retorno.text = "Não ganha"
+        print("Não ganha")
+        retorno.textColor = UIColor.red
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            print("done")
+            self.proximaPessoa()
+        })
+    }
+    
+    func nMerece() {
+        retorno.alpha = 1
+        retorno.text = "Não merece"
+        print("Não merece")
+        retorno.textColor = UIColor.red
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.proximaPessoa()
         })
     }
     
     override func viewDidLoad() {
         proximaPessoa()
+        
+        
     }
   
     
@@ -51,17 +120,17 @@ class PessoaViewController: UIViewController {
         Pessoa(nome: "André Luiz Tosin", idade: 30, descricao: "blablabla", imagem: UIImage(named: "03")!, comentario: ""),
         Pessoa(nome: "Andy Valengo", idade: 30, descricao: "BIIIIIIIIIIRL 💪", imagem: UIImage(named: "04")!, comentario: ""),
         Pessoa(nome: "Bruno Pastre", idade: 30, descricao: "blablabla", imagem: UIImage(named: "05")!, comentario: ""),
-        Pessoa(nome: "Carlos Modinez", idade: 30, descricao: "blablabla", imagem: UIImage(named: "06")!, comentario: ""),
+        Pessoa(nome: "Carlos Modinez", idade: 20, descricao: "lindo, gênio e humilde\n\nÀs vezes tenho problemas com auto estima", imagem: UIImage(named: "06")!, comentario: "Não é a grávida de Taubaté mas veio de lá."),
         Pessoa(nome: "Kali Tokarski", idade: 22, descricao: "Promiscous Girl 🎶🐍", imagem: UIImage(named: "07")!, comentario: "que mulher"),
         Pessoa(nome: "Cris Correia", idade: 30, descricao: "blablabla", imagem: UIImage(named: "08")!, comentario: ""),
         Pessoa(nome: "Duda Linhares", idade: 18, descricao: "rainha das galáxias", imagem: UIImage(named: "09")!, comentario: "vai representar nóis na WWDC"),
         Pessoa(nome: "Enzo Maruffa", idade: 19, descricao: "roxo 💜", imagem: UIImage(named: "10")!, comentario: "programador ele"),
         Pessoa(nome: "Felipe Mesquita", idade: 30, descricao: "blablabla", imagem: UIImage(named: "11")!, comentario: ""),
-        Pessoa(nome: "Kaz Born", idade: 30, descricao: "blablabla", imagem: UIImage(named: "12")!, comentario: ""),
+        Pessoa(nome: "Kaz Born", idade: 23, descricao: "Hungregaana hingeaana ah dingegungana squash banana hunge- *CRACK* HUAAAHT", imagem: UIImage(named: "12")!, comentario: "conceitual"),
         Pessoa(nome: "Filipe de Oliveira", idade: 30, descricao: "blablabla", imagem: UIImage(named: "13")!, comentario: ""),
         Pessoa(nome: "Akira Tsukamoto", idade: 20, descricao: "Japão. 🇯🇵", imagem: UIImage(named: "14")!, comentario: "China in box 🇨🇳"),
         Pessoa(nome: "Gabriel Taques", idade: 30, descricao: "blablabla", imagem: UIImage(named: "15")!, comentario: ""),
-        Pessoa(nome: "Gabriel Gazal", idade: 30, descricao: "blablabla", imagem: UIImage(named: "16")!, comentario: ""),
+        Pessoa(nome: "Gabriel Gazal", idade: 20, descricao: "Sou cachorra 🐶 sou gatinha 🐱 não adianta se esquivar 🎶", imagem: UIImage(named: "16")!, comentario: ""),
         Pessoa(nome: "Gabs Nogueira", idade: 20, descricao: "Meu coração é o sol 🦁", imagem: UIImage(named: "17")!, comentario: "ela costura ela"),
         Pessoa(nome: "Hugo de Ávila", idade: 30, descricao: "blablabla", imagem: UIImage(named: "18")!, comentario: ""),
         Pessoa(nome: "Isa Castro", idade: 24, descricao: "Primeira de seu nome, rainha dos ândalos, dos roinares e dos primeiros homens e protetora dos Sete Reinos", imagem: UIImage(named: "19")!, comentario: "American Date 🇺🇸"),
@@ -100,10 +169,10 @@ class PessoaViewController: UIViewController {
     
     func atualizarInterface(pessoaSelecionada: Int) {
         
-        let pessoa = pessoas[pessoaSelecionada] // crio uma variável pra não precisar ficar repetindo esse trecho de código que quer dizer: meuArray[número da posição que eu to lendo]
-        print(pessoa.nome) //aqui um print só pra saber se tá funcionando
+        let pessoa = pessoas[pessoaSelecionada]
+        print(pessoa.nome)
         
-        imgPessoa.image = pessoa.imagem // troco a imagem pela imagem do meuyArray[número da posição que eu to lendo]
+        imgPessoa.image = pessoa.imagem
         nomePessoa.text = "\(pessoa.nome), \(pessoa.idade)"
         txtPessoa.text = pessoa.descricao
         cmtEditor.text = pessoa.comentario
